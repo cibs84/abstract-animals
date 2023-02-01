@@ -1,6 +1,6 @@
 package org.java.lessons.ClassiInterfacce;
 
-public class Passerotto extends Animale {
+public class Passerotto extends Animale implements IVolante {
 
 	@Override
 	public void verso() {
@@ -10,6 +10,11 @@ public class Passerotto extends Animale {
 	@Override
 	public void mangia() {
 		System.out.println("Frutta, Semi, Insetti");
+	}
+	
+	@Override
+	public void vola() {
+		System.out.println("Il passerotto sta volando!");
 	}
 
 }

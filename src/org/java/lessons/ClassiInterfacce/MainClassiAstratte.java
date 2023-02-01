@@ -11,8 +11,10 @@ public class MainClassiAstratte {
 		
 		for (int i = 0; i < animali.length; i++) {
 			System.out.println("Animale: " + animali[i].getClass().getSimpleName());
+			
 			System.out.print("Che verso fa: ");
 			animali[i].verso();
+			
 			System.out.print("Cosa Mangia: ");
 			animali[i].mangia();
 			System.out.println();
