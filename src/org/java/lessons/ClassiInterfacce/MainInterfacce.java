@@ -11,26 +11,23 @@ public class MainInterfacce {
 		animali[2] = new Aquila();
 		animali[3] = new Delfino();
 		
-		String[] volanti = {"Aquila", "Passerotto"};
-		String[] nuotanti = {"Cane", "Delfino"};
-		
 		for (int i = 0; i < animali.length; i++) {
-			if (Arrays.asList(volanti).contains(animali[i].getClass().getSimpleName())) {
-				faiVolare(animali[i]);
+			if (animali[i] instanceof IVolante) {
+				faiVolare((IVolante) animali[i]);
 				System.out.println();
-			} else if (Arrays.asList(nuotanti).contains(animali[i].getClass().getSimpleName())) {
-				faiNuotare(animali[i]);
+			} else if (animali[i] instanceof INuotante) {
+				faiNuotare((INuotante) animali[i]);
 				System.out.println();
 			}
 		}
 	}
 	
-	public static void faiVolare(Animale volante) {
-		((IVolante) volante).vola();
+	public static void faiVolare(IVolante volante) {
+		volante.vola();
 	}
 	
-	public static void faiNuotare(Animale nuotante) {
-		((INuotante) nuotante).nuota();
+	public static void faiNuotare(INuotante nuotante) {
+		nuotante.nuota();
 	}
 	
 }
